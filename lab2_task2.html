@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Feedback Survey</title>
+</head>
+
+<body>
+
+    <h1>Course Feedback Survey</h1>
+    <p>Your feedback helps us improve! Please fill out this survey.</p>
+
+    <form action="/submit-survey" method="POST">
+
+        <!-- ======================================= -->
+        <!-- TODO 1: STUDENT INFORMATION -->
+
+        <legend>Student Information</legend>
+
+        <p>
+            <label for="student-name">Full Name:</label><br>
+            <input type="text" id="student-name" name="student_name" required>
+        </p>
+
+        <p>
+            <label for="student-id">Student ID:</label><br>
+            <input type="text" id="student-id" name="student_id" pattern="[0-9]{7,9}" title="7-9 digit student ID"
+                required>
+        </p>
+
+        <p>
+            <label for="student-email">Email:</label><br>
+            <input type="email" id="student-email" name="student_email">
+        </p>
+
+        <p>
+            <label for="course-select">Course:</label><br>
+            <select id="course-select" name="course" required>
+                <option value="" disabled selected>-- Select a Course --</option>
+                <option value="web-dev-1">Web Dev 1</option>
+                <option value="database-systems">Database Systems</option>
+                <option value="algorithms">Algorithms</option>
+                <option value="data-structures">Data Structures</option>
+            </select>
+        </p>
+
+
+        <br>
+
+        <!-- ======================================= -->
+        <!-- TODO 2: COURSE RATING -->
+        <!-- ======================================= -->
+
+        <legend>Course Rating</legend>
+
+        <p>Overall Rating:</p>
+        <input type="radio" id="overall-excellent" name="overall" value="excellent" required>
+        <label for="overall-excellent">Excellent</label>
+
+        <input type="radio" id="overall-good" name="overall" value="good">
+        <label for="overall-good">Good</label>
+
+        <input type="radio" id="overall-average" name="overall" value="average">
+        <label for="overall-average">Average</label>
+
+        <input type="radio" id="overall-poor" name="overall" value="poor">
+        <label for="overall-poor">Poor</label>
+
+        <p>Instructor Rating:</p>
+        <input type="radio" id="instructor-excellent" name="instructor" value="excellent" required>
+        <label for="instructor-excellent">Excellent</label>
+
+        <input type="radio" id="instructor-good" name="instructor" value="good">
+        <label for="instructor-good">Good</label>
+
+        <input type="radio" id="instructor-average" name="instructor" value="average">
+        <label for="instructor-average">Average</label>
+
+        <input type="radio" id="instructor-poor" name="instructor" value="poor">
+        <label for="instructor-poor">Poor</label>
+
+        <p>Content Quality:</p>
+        <input type="radio" id="content-excellent" name="content" value="excellent" required>
+        <label for="content-excellent">Excellent</label>
+
+        <input type="radio" id="content-good" name="content" value="good">
+        <label for="content-good">Good</label>
+
+        <input type="radio" id="content-average" name="content" value="average">
+        <label for="content-average">Average</label>
+
+        <input type="radio" id="content-poor" name="content" value="poor">
+        <label for="content-poor">Poor</label>
+
+        <p>Difficulty Level:</p>
+        <label for="difficulty">Too Easy (1) --- Very Hard (5)</label><br>
+        <input type="range" id="difficulty" name="difficulty" min="1" max="5" value="3">
+
+        <br>
+
+        <!-- ======================================= -->
+        <!-- TODO 3: YOUR FEEDBACK -->
+        <!-- ======================================= -->
+        <legend>Your Feedback</legend>
+
+        <p>
+            <label for="liked-most">What did you like most?</label><br>
+            <textarea id="liked-most" name="liked_most" rows="4" cols="50" required></textarea>
+        </p>
+
+        <p>
+            <label for="can-improve">What can be improved?</label><br>
+            <textarea id="can-improve" name="can_improve" rows="4" cols="50"></textarea>
+        </p>
+
+        <p>Would you recommend this course?</p>
+        <input type="radio" id="recommend-yes" name="recommend" value="yes">
+        <label for="recommend-yes">Yes</label>
+
+        <input type="radio" id="recommend-no" name="recommend" value="no">
+        <label for="recommend-no">No</label>
+
+        <input type="radio" id="recommend-maybe" name="recommend" value="maybe">
+        <label for="recommend-maybe">Maybe</label>
+
+        <br>
+
+        <!-- ======================================= -->
+        <!-- TODO 4: PREFERRED SCHEDULE -->
+        <!-- ======================================= -->
+        <legend>Preferred Schedule</legend>
+
+        <p>
+            <label for="preferred-time">Preferred class time:</label><br>
+            <select id="preferred-time" name="preferred_time">
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+            </select>
+        </p>
+
+        <p>Preferred days:</p>
+        <input type="checkbox" id="day-sun" name="preferred_days" value="sunday">
+        <label for="day-sun">Sunday</label>
+
+        <input type="checkbox" id="day-mon" name="preferred_days" value="monday">
+        <label for="day-mon">Monday</label>
+
+        <input type="checkbox" id="day-tue" name="preferred_days" value="tuesday">
+        <label for="day-tue">Tuesday</label>
+
+        <input type="checkbox" id="day-wed" name="preferred_days" value="wednesday">
+        <label for="day-wed">Wednesday</label>
+
+        <input type="checkbox" id="day-thu" name="preferred_days" value="thursday">
+        <label for="day-thu">Thursday</label>
+
+        <br>
+
+        <!-- ======================================= -->
+        <!-- TODO 5: SUBMIT AND RESET BUTTONS -->
+        <!-- ======================================= -->
+        <button type="submit">Submit Survey</button>
+        <button type="reset">Clear</button>
+
+    </form>
+
+</body>
+
+</html>
